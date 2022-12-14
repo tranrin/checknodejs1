@@ -1,8 +1,8 @@
 
-module.exports=app=>{
+//module.exports=app=>{//parameter
 const Cities = require("../controller/city.controller.js");
 
-    const router = require("express").Router();// goi router tu express
+const router = require("express").Router();// goi router tu express
     /**
  * @swagger
  * components:
@@ -39,12 +39,12 @@ const Cities = require("../controller/city.controller.js");
  *         
  */
 
- /**
-  * @swagger
-  * tags:
-  *   name: Cities
-  *   description: The Cities managing API
-  */
+  /**
+* @swagger
+* tags:
+*  name: Cities
+*   description: The Cities managing API
+*/
    /**
  * @swagger
  * /api/tutorials:
@@ -136,7 +136,7 @@ const Cities = require("../controller/city.controller.js");
     // Delete all Tutorials
    //  router.delete("/", tutorials.deleteAll);
 
-
-    app.use('/api/tutorials', router);
-   };
+   module.exports=router;
+   // app.use('/api/tutorials', router);
+   //};
 

@@ -3,7 +3,7 @@ const swaggerUI = require("swagger-ui-express");
 const swaggerJsDoc = require("swagger-jsdoc");
 // const bodyParser = require("body-parser"); /* deprecated */
 const cors = require("cors");
-//const {router}=require("./app/routes/product.routes");
+const router=require("./app/routes/city.routes.js");
 // const app = express();
 var corsOptions = {
   origin: "http://127.0.0.1:1337"
@@ -39,13 +39,13 @@ app.use(express.json()); /* bodyParser.json() is deprecated */
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true })); /* bodyParser.urlencoded() is deprecated */
 //route application service
-//app.use('/api/tutorials',router);
+
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to demo application." });
 });
-
-require("./app/routes/city.routes.js")(app);
+app.use('/api/tutorials',router);
+//require("./app/routes/city.routes.js")(app);
 
 // set port, listen for requests
 const port = process.env.PORT || 1337
